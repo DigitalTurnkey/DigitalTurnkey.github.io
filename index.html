@@ -1,7 +1,7 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 <head>
-	<!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7TXM2K05ER"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,11 +10,107 @@
 
   gtag('config', 'G-7TXM2K05ER');
 </script>
+    <title>Test Wesbite</title>
+    <style>
+        /* CSS styles for the website */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #777;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-<body> 
-<h1> Tag Testing </h1> 
-<p> Hey All! This is a dummy website created to test analytic tags. </p>
-<p> The first push / commit to this has been successful. Next steps would involve implementing google analytic tags on this and to see if they are firing correctly. </p>
-<p>This is now a version installed with the Google Analytics Tag. Need to wait for 48 hours for it to collect data and reflect it on the Google Analytics Dashboard </p>
-</body> 
-</html>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://digitalturnkey.github.io/">Home</a></li>
+                <li><a href="https://www.linkedin.com/in/rajat-gupta-rg63/">About</a></li>
+                <li><a href="mailto:pooguuboy@gmail.com?subject=Contact PooguuBoy to know his magic Trick">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="home">
+            <h1>Welcome to the Home Page</h1>
+            <p>This is a test wesbite.</p>
+            <a class="cta-button" href="mailto:pooguuboy@gmail.com?subject=Contact PooguuBoy to know his magic Trick">Contact Us</a>
+        </div>
+        <div id="about">
+            <h1>About Us</h1>
+            <p>This is the about page content.</p>
+            <a class="cta-button" href="https://www.linkedin.com/in/rajat-gupta-rg63">LinkedIn</a>
+        </div>
+    </main>
+
+    <script>
+        // JavaScript code to handle page navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide all pages except the home page by default
+            var pages = document.querySelectorAll('main > div');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = 'none';
+            }
+
+            // Show the initial page based on the URL hash or default to home
+            var initialPage = window.location.hash.slice(1) || 'home';
+            showPage(initialPage);
+
+            // Add event listeners to the navigation links
+            var links = document.querySelectorAll('nav a');
+            for (var j = 0; j < links.length; j++) {
+                links[j].addEventListener('click', function(event) {
+                    var targetPage = this.getAttribute('href').slice(1);
+                    showPage(targetPage);
+                    event.preventDefault();
+                });
+            }
+
+            // Function to show the selected page
+            function showPage(pageId) {
+                for (var k = 0; k < pages.length; k++) {
+                    if (pages[k].id === pageId) {
+                        pages[k].style.display = 'block';
+                    }
